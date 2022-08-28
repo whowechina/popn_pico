@@ -1,4 +1,4 @@
-21286858870294190
+21295362553290722
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57701,6 +57701,13 @@ QFN DFN_QFN
 70
 57
 MCU_RaspberryPi_and_Boards
+RPi_Pico_SMD
+Through hole straight pin header, 2x20, 2.54mm pitch, double rows
+Through hole pin header THT 2x20 2.54mm double row
+0
+89
+46
+MCU_RaspberryPi_and_Boards
 RPi_Pico_SMD_TH
 Through hole straight pin header, 2x20, 2.54mm pitch, double rows
 Through hole pin header THT 2x20 2.54mm double row
@@ -58834,6 +58841,13 @@ MXOnly-LEDONLY-FLIPPED
 0
 2
 2
+MX_Only
+MXOnly-Popn_Button-Hotswap-LED
+
+
+0
+4
+4
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
