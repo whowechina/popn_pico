@@ -7,8 +7,6 @@
 #include <stdbool.h>
 
 #include "bsp/board.h"
-#include "hardware/clocks.h"
-#include "pico/stdlib.h"
 #include "tusb.h"
 #include "usb_descriptors.h"
 

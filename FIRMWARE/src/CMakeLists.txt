@@ -1,11 +1,9 @@
-add_executable(pico_popn main.c buttons.c usb_descriptors.c)
-add_compile_options(-Wfatal-errors -O3)
-include_directories(${CMAKE_CURRENT_LIST_DIR})
+add_executable(${PROJECT_NAME} main.c buttons.c usb_descriptors.c)
 
-target_link_libraries(pico_popn PRIVATE
-        pico_multicore
-        pico_stdlib
-        tinyusb_device
-        tinyusb_board)
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Werror -Wfatal-errors -O3)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    pico_multicore pico_stdlib tinyusb_device tinyusb_board)
 
-pico_add_extra_outputs(pico_popn)
+# Make a UF2 binary
+pico_add_extra_outputs(${PROJECT_NAME})
