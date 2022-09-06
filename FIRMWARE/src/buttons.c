@@ -9,8 +9,9 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <hardware/gpio.h>
-#include <hardware/timer.h>
+
+#include "hardware/gpio.h"
+#include "hardware/timer.h"
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 

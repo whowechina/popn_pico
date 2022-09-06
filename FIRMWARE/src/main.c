@@ -11,6 +11,7 @@
 #include "usb_descriptors.h"
 
 #include "buttons.h"
+#include "rgb.h"
 
 uint64_t hid_lights_timeout = 0;
 
@@ -43,11 +44,13 @@ void main_loop()
     }
 }
 
+
 void init()
 {
     board_init();
     tusb_init();
     button_init();
+    rgb_init();
 }
 
 int main(void)
@@ -83,12 +86,15 @@ void tud_hid_set_report_cb(uint8_t itf, uint8_t report_id,
 {
     if ((report_id == REPORT_ID_LIGHTS) &&
         (report_type == HID_REPORT_TYPE_OUTPUT)) {
-        if (bufsize < button_num()) {
+        if (bufsize < button_num() + 3) { /* including logo rgb */
             return;
         }
         for (int i = 0; i < button_num(); i++) {
             button_lights[i] = (buffer[i] > 0);
         }
+        uint8_t const *rgb = buffer + button_num();
+        rgb_update_logo(rgb[0], rgb[1], rgb[2]);
+
         hid_lights_timeout = time_us_64() + 1000000; /* 1 second */
     }
 }
