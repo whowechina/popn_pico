@@ -13,6 +13,8 @@
 #include "hardware/gpio.h"
 #include "hardware/timer.h"
 
+#include "rgb.h"
+
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 
 static const struct button {
@@ -75,6 +77,7 @@ uint16_t button_read()
             if (sw_pressed != sw_val[i]) {
                 sw_val[i] = sw_pressed;
                 sw_freeze_time[i] = now + DEBOUNCE_FREEZE_TIME_US;
+                rgb_speed_up();
             }
         }
 
