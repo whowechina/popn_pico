@@ -13,18 +13,12 @@
 #include "buttons.h"
 #include "rgb.h"
 
-uint64_t hid_lights_timeout = 0;
-
 #define BUTTON_LIGHT_MAX_NUM 32 /* Must be larger than number of buttons */
 bool button_lights[BUTTON_LIGHT_MAX_NUM] = {0};
 
 void update_lights()
 {
-    if (time_us_64() < hid_lights_timeout) {
-        button_set_light(button_lights, button_num());
-    } else {
-        button_auto_light();
-    }        
+    button_update_light();
 }
 
 struct report
@@ -92,9 +86,9 @@ void tud_hid_set_report_cb(uint8_t itf, uint8_t report_id,
         for (int i = 0; i < button_num(); i++) {
             button_lights[i] = (buffer[i] > 0);
         }
+        button_set_light(buffer, button_num());
+
         uint8_t const *rgb = buffer + button_num();
         rgb_update_logo(rgb[0], rgb[1], rgb[2]);
-
-        hid_lights_timeout = time_us_64() + 1000000; /* 1 second */
     }
 }

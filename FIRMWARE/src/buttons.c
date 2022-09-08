@@ -90,23 +90,25 @@ uint16_t button_read()
     return buttons;
 }
 
-void button_auto_light()
+#define HID_EXPIRE_DURATION 1000000ULL
+static uint32_t hid_expire_time = 0;
+static bool hid_lights[BUTTON_NUM];
+
+void button_update_light()
 {
+    bool hid_active = (time_us_64() < hid_expire_time);
     for (int i = 0; i < BUTTON_NUM; i++) {
+        bool val = hid_active ? hid_lights[i] : sw_val[i];
         if (BUTTON_DEFS[i].led_gpio >= 0) { 
-            gpio_put(BUTTON_DEFS[i].led_gpio, sw_val[i]);
+            gpio_put(BUTTON_DEFS[i].led_gpio, val);
         }
     }
 }
 
-void button_set_light(bool lights[], uint8_t num)
+void button_set_light(uint8_t const *lights, uint8_t num)
 {
-    for (int i = 0; i < num; i++) {
-        if (i >= BUTTON_NUM) {
-            break;
-        }
-        if (BUTTON_DEFS[i].led_gpio >= 0) { 
-            gpio_put(BUTTON_DEFS[i].led_gpio, lights[i]);
-        }
+    for (int i = 0; (i < num) && (i < BUTTON_NUM); i++) {
+        hid_lights[i] = (lights[i] > 0);
     }
+    hid_expire_time = time_us_64() + HID_EXPIRE_DURATION;
 }

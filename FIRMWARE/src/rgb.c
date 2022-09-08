@@ -67,7 +67,7 @@ void update_led()
 }
 
 #define HID_EXPIRE_DURATION 1000000ULL
-uint32_t hid_expire_time = 0;
+static uint32_t hid_expire_time = 0;
 
 #define RAINBOW_SPEED_MAX 100
 #define RAINBOW_SPEED_MIN 4

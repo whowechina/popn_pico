@@ -13,7 +13,7 @@ void button_init();
 uint8_t button_num();
 uint16_t button_read();
 
-void button_auto_light();
-void button_set_light(bool lights[], uint8_t num);
+void button_update_light();
+void button_set_light(uint8_t const *lights, uint8_t num);
 
 #endif
