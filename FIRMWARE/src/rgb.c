@@ -16,7 +16,12 @@
 
 #include "ws2812.pio.h"
 
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
+
 #define WS2812_PIN 28
+
+uint8_t logo_leds[] = {0, 1, 2};
+uint8_t effect_leds[] = {3, 4, 5, 6, 7, 8, 9};
 
 static inline void put_pixel(uint32_t pixel_grb)
 {
@@ -53,57 +58,80 @@ uint32_t color_wheel(int index)
     }
 }
 
-uint32_t color[10];
-uint32_t rotator = 0;
-uint32_t speed = 100;
-uint32_t pitch = 151;
-
-void rotate()
+static uint32_t led_buf[sizeof(logo_leds) + sizeof(effect_leds)];
+void update_led()
 {
-    rotator += speed;
-
-    for (int i = 0; i < sizeof(color); i++) {
-        put_pixel(color_wheel(rotator + pitch * i));
+    for (int i = 0; i < ARRAY_SIZE(led_buf); i++) {
+        put_pixel(led_buf[i]);
     }
 }
 
-void rgb_speed_up()
+#define HID_EXPIRE_DURATION 1000000ULL
+uint32_t hid_expire_time = 0;
+
+#define RAINBOW_SPEED_MAX 100
+#define RAINBOW_SPEED_MIN 4
+#define RAINBOW_PITCH 151
+#define RAINBOW_SPEED_DOWN_INTERVAL 200000ULL
+uint32_t speed = RAINBOW_SPEED_MIN;
+void rainbow_update()
 {
-    if (speed < 100) {
+    static uint32_t rotator = 0;
+    rotator += speed;
+
+    for (int i = 0; i < sizeof(effect_leds); i++) {
+        led_buf[effect_leds[i]] = color_wheel(rotator + RAINBOW_PITCH * i);
+    }
+
+    if (time_us_64() < hid_expire_time) {
+        return;
+    }
+    /* When there's no HID light input, use Logo LEDs for rainbow flow */
+    uint32_t offset = rotator + RAINBOW_PITCH * sizeof(effect_leds);
+    for (int i = 0; i < sizeof(logo_leds); i++) {
+        led_buf[logo_leds[i]] = color_wheel(offset + RAINBOW_PITCH * i);
+    }
+}
+
+void rainbow_speed_up()
+{
+    if (speed < RAINBOW_SPEED_MAX) {
         speed++;
     }
 }
 
-#define SPEED_DOWN_INTERVAL 200000ULL
-void rgb_speed_down()
+void rainbow_speed_down()
 {
     static uint64_t next_change_time = 0;
     uint64_t now = time_us_64();
     if (now >= next_change_time) {
-        next_change_time = now + SPEED_DOWN_INTERVAL;
-        if (speed > 5) {
+        next_change_time = now + RAINBOW_SPEED_DOWN_INTERVAL;
+        if (speed > RAINBOW_SPEED_MIN) {
             speed = speed * 95 / 100;
         }
     }
 }
 
-static uint32_t logo_color = 0;
-
 void rgb_update_logo(uint8_t r, uint8_t g, uint8_t b)
 {
-    logo_color = urgb_u32(r, g, b);
+    uint32_t color = urgb_u32(r, g, b);
+    for (int i = 0; i < sizeof(logo_leds); i++) {
+        led_buf[logo_leds[i]] = color;
+    }
+    hid_expire_time = time_us_64() + HID_EXPIRE_DURATION;
+}
+
+void rgb_stimulate()
+{
+    rainbow_speed_up();
 }
 
 void rgb_entry()
 {
     while (1) {
-/*
-        for (int i = 0; i < 10; i++) {
-            put_pixel(logo_color);
-        }
-*/
-        rotate();
-        rgb_speed_down();
+        rainbow_update();
+        rainbow_speed_down();
+        update_led();
         sleep_ms(10);
     }
 }
