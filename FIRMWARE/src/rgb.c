@@ -30,9 +30,12 @@ static inline void put_pixel(uint32_t pixel_grb)
 
 static inline uint32_t urgb_u32(uint8_t r, uint8_t g, uint8_t b)
 {
-    return ((uint32_t)r << 8) | ((uint32_t)g << 16) | (uint32_t)b;
+    /* better gamma curve */
+    uint32_t r32 = (uint32_t)r * r;
+    uint32_t g32 = (uint32_t)g * g;
+    uint32_t b32 = (uint32_t)b * b;
+    return (b32 >> 8 << 16) | (g32 >> 8 << 8) | (r32 >> 8 << 0);
 }
-
 
 /* 6 segment regular hsv color wheel, better color cycle
  * https://www.arnevogel.com/rgb-rainbow/
