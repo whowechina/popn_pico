@@ -9,8 +9,11 @@ Features:
 * RGB rainbow effects.
 * So far, it only supports Gamepad mode.
 
-![Demo 1](doc/overal.mp4)
-![Demo 2](doc/lighting.mp4)
+<video src="https://user-images.githubusercontent.com/11623830/189601050-35440f27-5d67-4410-8533-f4e92887f753.mp4" controls="controls" width="50%">
+</video>
+
+<video src="https://user-images.githubusercontent.com/11623830/189601062-6984f811-3431-485f-bb1b-faf98aed2351.mp4" controls="controls" width="50%">
+</video>
 
 Thanks to:
 * SpeedyPotato, for his great SDVX pico project which inspired me in the first place. I also got many materials from his repo. Check out his great projects: https://github.com/speedypotato.
