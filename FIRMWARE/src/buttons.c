@@ -1,6 +1,6 @@
 /*
  * Pico Popn Controller Buttons
- * WHowe <whowe@gmail.com>
+ * WHowe <github.com/whowechina>
  * 
  * A button consists of a switch and an LED
  */

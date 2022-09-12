@@ -1,6 +1,6 @@
 /*
  * Pico Popn Controller Buttons
- * WHowe <whowechina@github>
+ * WHowe <github.com/whowechina>
  */
 
 #ifndef RGB_H

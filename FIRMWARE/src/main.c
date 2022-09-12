@@ -1,6 +1,6 @@
 /*
  * Pico Popn Controller Main
- * WHowe <whowe@gmail.com>
+ * WHowe <github.com/whowechina>
  */
 
 #include <stdint.h>

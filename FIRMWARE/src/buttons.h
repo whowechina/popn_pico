@@ -1,6 +1,6 @@
 /*
  * Pico Popn Controller Buttons
- * WHowe <whowe@gmail.com>
+ * WHowe <github.com/whowechina>
  */
 
 #ifndef BUTTONS_H
