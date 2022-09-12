@@ -22,8 +22,10 @@ Thanks to:
 ### Step 1 - Buy
 * Place order at jlcpcb.com for PCB and plate. Gerber zip files are **/PRODUCTION/PCB.zip** and **/PRODUCTION/PLATE.zip**. Leave everything default in JLC's ordering page (board thickness is 1.6mm). Choose what ever color you like, I prefer white.  
 <img src="doc/pcb_and_plate.jpg" width="50%">
+
 * Order 3D printing service for the case, FDM with transparent PETG filament or SLA with half-transparent resin. If you own a 3D printer, do it yourself. The file is **/PRODUCTION/pico_popn_case.stl**.  
 <img src="doc/case_3d_print.jpg" width="50%">
+
 * Buy other components (get few more for tolerance):
   * 1 * Raspberry Pi Pico (https://www.raspberrypi.com/products/raspberry-pi-pico/)
   * 9 * Gateron Hotswap Sockets (https://www.gateron.co/products/gateron-hot-swap-pcb-socket)
@@ -73,33 +75,28 @@ Thanks to:
  ### Step 5 - Keycaps
  * There're many choices.
    * Homemade bottle cover keycaps  
-   <img src="doc/keycap_bottle_cover.jpg" width="50%">
+     <img src="doc/keycap_bottle_cover.jpg" width="50%">
    * Homemade coat buttons keycaps  
-   <img src="doc/keycap_coat_button.jpg" width="50%">
+     <img src="doc/keycap_coat_button.jpg" width="50%">
    * DSA color keycaps  
-   <img src="doc/keycap_dsa.jpg" width="50%">
+     <img src="doc/keycap_dsa.jpg" width="50%">
    * DSA transparent keycaps  
-   <img src="doc/keycap_dsa_2.jpg" width="50%">
+     <img src="doc/keycap_dsa_2.jpg" width="50%">
    * MA color keycaps  
-   <img src="doc/keycap_ma.jpg" width="50%">
+     <img src="doc/keycap_ma.jpg" width="50%">
    * XDA 1.5U color keycaps  
-   <img src="doc/keycap_xda15x.jpg" width="50%">
+     <img src="doc/keycap_xda15x.jpg" width="50%">
  * About the homemade process.
    * I bought these inexpensive 3gram/5gram distribution bottles just to get the covers (28-30mm diameter).  
-   <img src="doc/homemade_bottles.jpg" width="50%">
+     <img src="doc/homemade_bottles.jpg" width="50%">
    * Cut the shaft/socket out of regular transparent keycaps.  
-   <img src="doc/homemade_get_shaft.jpg" width="50%">
+     <img src="doc/homemade_get_shaft.jpg" width="50%">
    * Drill some holes on them so later we can apply UV resin better.  
-   <img src="doc/homemade_drill_holes.jpg" width="50%">
+     <img src="doc/homemade_drill_holes.jpg" width="50%">
    * Apply UV resin, glue the socket and the cover together.  
-   <img src="doc/homemade_uv_resin.jpg" width="50%">
-   <img src="doc/homemade_glue_together.jpg" width="50%">
+     <img src="doc/homemade_uv_resin.jpg" width="50%">
+     <img src="doc/homemade_glue_together.jpg" width="50%">
    * Don't forget alignment.  
-   <img src="doc/homemade_alignment.jpg" width="50%">
+     <img src="doc/homemade_alignment.jpg" width="50%">
    * After cured by UV light, they look like this:  
-   <img src="doc/homemade_cured.jpg" width="50%">
-   
-
-   
-   
-
+     <img src="doc/homemade_cured.jpg" width="50%">  
