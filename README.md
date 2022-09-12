@@ -9,10 +9,10 @@ Features:
 * RGB rainbow effects.
 * So far, it only supports Gamepad mode.
 
-<video src="https://user-images.githubusercontent.com/11623830/189601050-35440f27-5d67-4410-8533-f4e92887f753.mp4" controls="controls" style="max-width: 600px;">
+<video src="https://user-images.githubusercontent.com/11623830/189601050-35440f27-5d67-4410-8533-f4e92887f753.mp4" controls="controls" width="50%">
 </video>
 
-<video src="https://user-images.githubusercontent.com/11623830/189601062-6984f811-3431-485f-bb1b-faf98aed2351.mp4" controls="controls" style="max-width: 600px;">
+<video src="https://user-images.githubusercontent.com/11623830/189601062-6984f811-3431-485f-bb1b-faf98aed2351.mp4" controls="controls" width="50%">
 </video>
 
 Thanks to:
