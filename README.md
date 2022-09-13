@@ -44,20 +44,23 @@ Thanks to:
 
 ### Step 2 - Solder
 * Use the smallest soldering iron tip you have.
-* Use solder flux.
+* Use solder flux, always keep the pins "wet".
 * Soldering iron temperature set to around 300°C.
 * Use tweezers to hold components.
 * Tricks for Type-C socket and 4020 RGB LEDs.
     * Put flux on all those small pins. Melt a tiny little bit solder (seriously very very little bit) at the iron tip. Then quickly solder the pins. Flux and very little bit solder is the key.
 * 2 resistors near USB socket are 5.1k ohm, others are all 220ohm.
 * Don't forget to solder 3 "holes" which connects to the Raspberry Pi Pico's USB pins.  
-<img src="doc/usb_soldered.jpg" width="40%">
+  <img src="doc/usb_soldered.jpg" width="40%">
 * 4020 RGB LEDs are side-facing, don't make it "up-facing".  
-<img src="doc/leds_soldered.jpg" width="30%">
+  <img src="doc/leds_soldered.jpg" width="30%">
+* They look like this when finish:  
+  <img src="doc/pcb_soldered_up.jpg" width="100%">
+  <img src="doc/pcb_soldered_down.jpg" width="100%">
 
 ### Step 3 - Firmware
 * Use a USB cable to connect the PCB to a PC/Mac computer while pressing down the small button on Raspberry Pi Pico. An explorer window will pop up. If it doesn't show up, navigate to a disk labeled "RPI-RP2".  
-<img src="doc/rpi_rp2.png" width="50%">
+ <img src="doc/rpi_rp2.png" width="50%">
 * Drag the UF2 file (**/PRODUCTION/pico_popn.uf2**) to the root of this new disk.
 * The RGB lights will start rainbow effects.
 * If it's not working, go back to Step 2 and fix it.
@@ -67,13 +70,14 @@ Thanks to:
   <img src="doc/switch_installed.jpg" width="30%">
 * Put the PCB into the case.
 * Gap between the plate and the PCB is about 3.4mm. There're many ways to fix and fasten boards and case. Here's my solution, I reprocessed the screws and spacers as they didn't come with proper length.  
- <img src="doc/screw_solution.png" width="50%">
- <img src="doc/screw_real.jpg" width="50%">
-* Use some anti-slip silicone pads.  
- <img src="doc/screw_final.jpg" width="50%">
+  <img src="doc/screw_solution.png" width="50%">
+  <img src="doc/screw_real.jpg" width="50%">
+* Another way is to use a long M3 screw from top side and a nut at the bottom side. Between PCB and plate, use a 3.5mm length M3 spacer with no threads. You can also 3D print some spacers using provided **/PRODUCTION/screw_spacer.stl**. 
+* Don't forget get some anti-slip silicone pads.  
+  <img src="doc/screw_final.jpg" width="50%">
 * Almost done.  
- <img src="doc/assembled_top.jpg" width="50%">
- <img src="doc/assembled_back.jpg" width="50%">
+  <img src="doc/assembled_top.jpg" width="50%">
+  <img src="doc/assembled_back.jpg" width="50%">
 
  ### Step 5 - Keycaps
  * There're many choices.
