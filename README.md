@@ -24,10 +24,10 @@ Thanks to:
 
 ### Step 1 - Buy
 * Place order at jlcpcb.com for PCB and plate. Gerber zip files are **/PRODUCTION/PCB.zip** and **/PRODUCTION/PLATE.zip**. Leave everything default in JLC's ordering page (board thickness is 1.6mm). Choose what ever color you like, I prefer white.  
-<img src="doc/pcb_and_plate.jpg" width="50%">
+  <img src="doc/pcb_and_plate.jpg" width="50%">
 
 * Order 3D printing service for the case, FDM with transparent PETG filament or SLA with half-transparent resin. If you own a 3D printer, do it yourself. The file is **/PRODUCTION/pico_popn_case.stl**.  
-<img src="doc/case_3d_print.jpg" width="50%">
+  <img src="doc/case_3d_print.jpg" width="50%">
 
 * Buy other components (get few more for tolerance):
   * 1 * Raspberry Pi Pico (https://www.raspberrypi.com/products/raspberry-pi-pico/)
@@ -48,7 +48,7 @@ Thanks to:
 * Soldering iron temperature set to around 300°C.
 * Use tweezers to hold components.
 * Tricks for Type-C socket and 4020 RGB LEDs.
-    * Put flux on all those small pins. Melt a tiny little bit solder (seriously very very little bit) at the iron tip. Then quickly solder the pins. Flux and very little bit solder is the key.
+  * Put flux on all those small pins. Melt a tiny little bit solder (seriously very very little bit) at the iron tip. Then quickly solder the pins. Flux and very little bit solder is the key.
 * 2 resistors near USB socket are 5.1k ohm, others are all 220ohm.
 * Don't forget to solder 3 "holes" which connects to the Raspberry Pi Pico's USB pins.  
   <img src="doc/usb_soldered.jpg" width="40%">
@@ -60,7 +60,7 @@ Thanks to:
 
 ### Step 3 - Firmware
 * Use a USB cable to connect the PCB to a PC/Mac computer while pressing down the small button on Raspberry Pi Pico. An explorer window will pop up. If it doesn't show up, navigate to a disk labeled "RPI-RP2".  
- <img src="doc/rpi_rp2.png" width="50%">
+  <img src="doc/rpi_rp2.png" width="50%">
 * Drag the UF2 file (**/PRODUCTION/pico_popn.uf2**) to the root of this new disk.
 * The RGB lights will start rainbow effects.
 * If it's not working, go back to Step 2 and fix it.
