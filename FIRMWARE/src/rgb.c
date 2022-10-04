@@ -34,7 +34,7 @@ static inline uint32_t urgb_u32(uint8_t r, uint8_t g, uint8_t b)
     uint32_t r32 = (uint32_t)r * r;
     uint32_t g32 = (uint32_t)g * g;
     uint32_t b32 = (uint32_t)b * b;
-    return (b32 >> 8 << 16) | (g32 >> 8 << 8) | (r32 >> 8 << 0);
+    return (g32 >> 8 << 16) | (r32 >> 8 << 8) | (b32 >> 8 << 0);
 }
 
 /* 6 segment regular hsv color wheel, better color cycle
