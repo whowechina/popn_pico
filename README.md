@@ -1,5 +1,7 @@
 # Pico Popn - Pop'n Music Controller
 
+<img src="doc/main.jpg" width="80%">
+
 <img src="doc/keycap_bottle_cover.jpg" width="80%">
 
 Features:
