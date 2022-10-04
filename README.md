@@ -80,30 +80,36 @@ Thanks to:
   <img src="doc/assembled_back.jpg" width="50%">
 
  ### Step 5 - Keycaps
- * There're many choices.
-   * Homemade bottle cover keycaps  
-     <img src="doc/keycap_bottle_cover.jpg" width="50%">
-   * Homemade coat buttons keycaps  
-     <img src="doc/keycap_coat_button.jpg" width="50%">
-   * DSA color keycaps  
-     <img src="doc/keycap_dsa.jpg" width="50%">
-   * DSA transparent keycaps  
-     <img src="doc/keycap_dsa_2.jpg" width="50%">
-   * MA color keycaps  
-     <img src="doc/keycap_ma.jpg" width="50%">
-   * XDA 1.5U color keycaps  
-     <img src="doc/keycap_xda15x.jpg" width="50%">
- * About the homemade process.
-   * I bought these inexpensive 3gram/5gram distribution bottles just to get the covers (28-30mm diameter).  
-     <img src="doc/homemade_bottles.jpg" width="50%">
-   * Cut the shaft/socket out of regular transparent keycaps.  
-     <img src="doc/homemade_get_shaft.jpg" width="50%">
-   * Drill some holes on them so later we can apply UV resin better.  
-     <img src="doc/homemade_drill_holes.jpg" width="50%">
-   * Apply UV resin, glue the socket and the cover together.  
-     <img src="doc/homemade_uv_resin.jpg" width="50%">
-     <img src="doc/homemade_glue_together.jpg" width="50%">
-   * Don't forget alignment.  
-     <img src="doc/homemade_alignment.jpg" width="50%">
-   * After cured by UV light, they look like this:  
-     <img src="doc/homemade_cured.jpg" width="50%">  
+ * If you have resin printer, you can make them by yourself.
+   * Make half-transparent resin by mixing translucent and white resin (5:1) as the base resin.
+   * Mix some drops of UV resin pigment, you can make all Pop'n Music button colors.  
+     <img src="doc/color_pigment.jpg" width="50%">
+   * 3D file is **/PRODUCTION/popn_keycap.stl** or if you're using Chitubox - **/PRODUCTION/popn_6keys.chitubox**. Orientation and support should be like this to get perfect button surface.  
+    <img src="doc/button_resin_support.png" width="50%">
+* There're many other choices.
+  * Homemade bottle cover keycaps  
+    <img src="doc/keycap_bottle_cover.jpg" width="50%">
+  * Homemade coat buttons keycaps  
+    <img src="doc/keycap_coat_button.jpg" width="50%">
+  * DSA color keycaps  
+    <img src="doc/keycap_dsa.jpg" width="50%">
+  * DSA transparent keycaps  
+    <img src="doc/keycap_dsa_2.jpg" width="50%">
+  * MA color keycaps  
+    <img src="doc/keycap_ma.jpg" width="50%">
+  * XDA 1.5U color keycaps  
+    <img src="doc/keycap_xda15x.jpg" width="50%">
+  * About the homemade process.
+  * I bought these inexpensive 3gram/5gram distribution bottles just to get the covers (28-30mm diameter).  
+    <img src="doc/homemade_bottles.jpg" width="50%">
+  * Cut the shaft/socket out of regular transparent keycaps.  
+    <img src="doc/homemade_get_shaft.jpg" width="50%">
+  * Drill some holes on them so later we can apply UV resin better.  
+    <img src="doc/homemade_drill_holes.jpg" width="50%">
+  * Apply UV resin, glue the socket and the cover together.  
+    <img src="doc/homemade_uv_resin.jpg" width="50%">
+    <img src="doc/homemade_glue_together.jpg" width="50%">
+  * Don't forget alignment.  
+    <img src="doc/homemade_alignment.jpg" width="50%">
+  * After cured by UV light, they look like this:  
+    <img src="doc/homemade_cured.jpg" width="50%">  
