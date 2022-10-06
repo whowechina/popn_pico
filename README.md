@@ -87,7 +87,7 @@ Thanks to:
    * 3D file is **/PRODUCTION/popn_keycap.stl** or if you're using Chitubox - **/PRODUCTION/popn_keycaps.chitubox**. Orientation and support should be like this to get perfect button surface.  
     <img src="doc/button_resin_support.png" width="50%">
    * These are printed by my Elegoo Mars 3 Pro.  
-     <img src="doc/keycap_3d_print.jpg" width="50%">
+    <img src="doc/keycap_3d_print.jpg" width="50%">
 * There're many other choices.
   * Homemade bottle cover keycaps  
     <img src="doc/keycap_bottle_cover.jpg" width="50%">
