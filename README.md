@@ -2,8 +2,6 @@
 
 <img src="doc/main.jpg" width="80%">
 
-<img src="doc/keycap_bottle_cover.jpg" width="80%">
-
 Features:
 * It's tiny.
 * 1000Hz polling rate.
@@ -83,11 +81,13 @@ Thanks to:
 
  ### Step 5 - Keycaps
  * If you have resin printer, you can make them by yourself.
-   * Make half-transparent resin by mixing translucent and white resin (5:1) as the base resin.
+   * Make half-transparent resin by mixing translucent and white resin (2:1) as the base resin.
    * Mix some drops of UV resin pigment, you can make all Pop'n Music button colors.  
      <img src="doc/color_pigment.jpg" width="50%">
    * 3D file is **/PRODUCTION/popn_keycap.stl** or if you're using Chitubox - **/PRODUCTION/popn_keycaps.chitubox**. Orientation and support should be like this to get perfect button surface.  
     <img src="doc/button_resin_support.png" width="50%">
+   * These are printed by my Elegoo Mars 3 Pro.  
+     <img src="doc/keycap_3d_print.jpg" width="50%">
 * There're many other choices.
   * Homemade bottle cover keycaps  
     <img src="doc/keycap_bottle_cover.jpg" width="50%">
