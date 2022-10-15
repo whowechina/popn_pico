@@ -59,8 +59,8 @@ module gateron(pos) {
 
 module pico(pos) {
     translate([0,0,0.6]) translate(pos) color("gold") cube([53,23,5]);
-    translate([-0.9,7.25,-1]) translate(pos) color("red") cube([6.75,8.5,6]);
-    translate([10,12.5,-1]) translate(pos) color("blue") cube([6,5,6]);
+    translate([-1.2,7.5,-1]) translate(pos) color("red") cube([6.75,8.5,6]);
+    translate([10.1,12.7,-1]) translate(pos) color("blue") cube([6,5,6]);
 }
 
 module screws() {
@@ -73,7 +73,7 @@ module screws() {
 
 module usbc() {
     hull() {
-        translate([-37.5, 80, 5.6]) rotate([90,0,0]) cylinder(d=3.4,h=20,$fn=32);
-        translate([-30.75, 80, 5.6]) rotate([90,0,0]) cylinder(d=3.4,h=20,$fn=32);
+        translate([-37.5, 80, 5.9]) rotate([90,0,0]) cylinder(d=3.4,h=20,$fn=32);
+        translate([-30.75, 80, 5.9]) rotate([90,0,0]) cylinder(d=3.4,h=20,$fn=32);
     }
 }
