@@ -93,16 +93,45 @@ uint16_t button_read()
 #define HID_EXPIRE_DURATION 1000000ULL
 static uint32_t hid_expire_time = 0;
 static bool hid_lights[BUTTON_NUM];
+static uint8_t hid_pwm[BUTTON_NUM];
+
+void light_soft_pwm()
+{
+    static uint16_t pwm_cycle = 0;
+    pwm_cycle = (pwm_cycle + 1) % 900;
+
+    for (int i = 0; i < BUTTON_NUM; i++) {
+        if (BUTTON_DEFS[i].led_gpio >= 0) {
+            gpio_put(BUTTON_DEFS[i].led_gpio, pwm_cycle <= hid_pwm[i] * hid_pwm[i]);
+        }
+    }
+}
+
+void light_fade()
+{
+    static uint64_t update_time = 0;
+    uint64_t now = time_us_64();
+    if (now - update_time > 6000) {
+        update_time = now;
+        for (int i = 0; i < BUTTON_NUM; i++) {
+            if (hid_pwm[i] > 0) {
+                hid_pwm[i]--;
+            }
+        }
+    }
+}
 
 void button_update_light()
 {
     bool hid_active = (time_us_64() < hid_expire_time);
     for (int i = 0; i < BUTTON_NUM; i++) {
-        bool val = hid_active ? hid_lights[i] : sw_val[i];
-        if (BUTTON_DEFS[i].led_gpio >= 0) { 
-            gpio_put(BUTTON_DEFS[i].led_gpio, val);
+        bool turn_on = hid_active ? hid_lights[i] : sw_val[i];
+        if (turn_on) {
+            hid_pwm[i] = 35;
         }
     }
+    light_soft_pwm();
+    light_fade();
 }
 
 void button_set_light(uint8_t const *lights, uint8_t num)
