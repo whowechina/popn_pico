@@ -7,7 +7,7 @@ Features:
 * 1000Hz polling rate.
 * HID lights (9 button lights and Logo RGB).
 * RGB rainbow effects.
-* So far, it only supports Gamepad mode.
+* Light brightness control (v1.2+).
 
 <video src="https://user-images.githubusercontent.com/11623830/189601050-35440f27-5d67-4410-8533-f4e92887f753.mp4" controls="controls" width="50%">
 </video>
@@ -19,6 +19,10 @@ Thanks to:
 * SpeedyPotato, for his great SDVX pico project which inspired me in the first place. I also got many materials from his repo. Check out his great projects: https://github.com/speedypotato.
 * CrazyRedMachine, I got panel arts from his SVG files: https://github.com/CrazyRedMachine/PopnPanel.
 * Many respectful guys/companies who made their tools or materials free or open source (KiCad, OpenSCAD, InkScape, Raspberry things).
+
+## Special Notes
+For builds v1.1 and earlier, you need to do a small modification and the main PCB to get brightness control with latest firmware.
+See the bottom of this document.
 
 ## HOW TO BUILD
 
@@ -115,3 +119,12 @@ Thanks to:
     <img src="doc/homemade_alignment.jpg" width="50%">
   * After cured by UV light, they look like this:  
     <img src="doc/homemade_cured.jpg" width="50%">  
+
+## Modification for v1.1 and earlier PCB
+In the first version of main PCB (v1.1 and earlier) I chose a wrong GPIO for the button 9 LED which caused a PWM conflict. To support brightness and fading control, that must be fixed.  
+The idea is to cut the old LED 9 track and wire it to a different pin (GPIO18). The blue * mark in the picture means "to cut the track" and the red * mark means "to solder".  
+If you don't need brightness and fading control, you don't need make this modification, just use v1.1 firmware.
+Sorry for the mistakes I made.
+<img src="doc/v12_fix.jpg" width="50%">
+<img src="doc/v12_fix_1.jpg" width="50%">
+<img src="doc/v12_fix_2.jpg" width="50%">
