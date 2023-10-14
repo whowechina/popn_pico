@@ -20,9 +20,23 @@ Thanks to:
 * CrazyRedMachine, I got panel arts from his SVG files: https://github.com/CrazyRedMachine/PopnPanel.
 * Many respectful guys/companies who made their tools or materials free or open source (KiCad, OpenSCAD, InkScape, Raspberry things).
 
-## Special Notes
+## Notes
 For builds v1.1 and earlier, you need to do a small modification and the main PCB to get brightness control with latest firmware.
 See the bottom of this document.
+
+You can check out my other cool projects.
+
+* IIDX Pico: https://github.com/whowechina/iidx_pico  
+<img src="https://raw.githubusercontent.com/whowechina/iidx_pico/main/doc/main.jpg" width="250px">
+
+* IIDX Teeny: https://github.com/whowechina/iidx_teeny  
+<img src="https://raw.githubusercontent.com/whowechina/iidx_teeny/main/doc/main.jpg" width="250px">
+
+* Chu Pico: https://github.com/whowechina/chu_pico  
+<img src="https://raw.githubusercontent.com/whowechina/chu_pico/main/doc/main.jpg" width="250px">
+
+* Mai Pico: https://github.com/whowechina/mai_pico  
+<img src="https://raw.githubusercontent.com/whowechina/mai_pico/main/doc/main.jpg" width="250px">
 
 ## HOW TO BUILD
 
