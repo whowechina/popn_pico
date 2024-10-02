@@ -26,17 +26,31 @@ See the bottom of this document.
 
 You can check out my other cool projects.
 
-* IIDX Pico: https://github.com/whowechina/iidx_pico  
-<img src="https://raw.githubusercontent.com/whowechina/iidx_pico/main/doc/main.jpg" width="250px">
+<img src="https://github.com/whowechina/popn_pico/raw/main/doc/main.jpg" height="100px">
+<img src="https://github.com/whowechina/iidx_pico/raw/main/doc/main.jpg" height="100px">
+<img src="https://github.com/whowechina/iidx_teeny/raw/main/doc/main.jpg" height="100px">
+<img src="https://github.com/whowechina/chu_pico/raw/main/doc/main.jpg" height="100px">
+<img src="https://github.com/whowechina/mai_pico/raw/main/doc/main.jpg" height="100px">
+<img src="https://github.com/whowechina/diva_pico/raw/main/doc/main.jpg" height="100px">
+<img src="https://github.com/whowechina/aic_pico/raw/main/doc/main.gif" height="100px">
+<img src="https://github.com/whowechina/groove_pico/raw/main/doc/main.gif" height="100px">
+<img src="https://github.com/whowechina/geki_pico/raw/main/doc/main.jpg" height="100px">
 
-* IIDX Teeny: https://github.com/whowechina/iidx_teeny  
-<img src="https://raw.githubusercontent.com/whowechina/iidx_teeny/main/doc/main.jpg" width="250px">
+* Popn Pico: https://github.com/whowechina/popn_pico
+* IIDX Pico: https://github.com/whowechina/iidx_pico
+* IIDX Teeny: https://github.com/whowechina/iidx_teeny
+* Chu Pico: https://github.com/whowechina/chu_pico
+* Mai Pico: https://github.com/whowechina/mai_pico
+* Diva Pico: https://github.com/whowechina/diva_pico
+* AIC Pico: https://github.com/whowechina/aic_pico
+* Groove Pico: https://github.com/whowechina/groove_pico
+* Geki Pico: https://github.com/whowechina/geki_pico
 
-* Chu Pico: https://github.com/whowechina/chu_pico  
-<img src="https://raw.githubusercontent.com/whowechina/chu_pico/main/doc/main.jpg" width="250px">
+## **Disclaimer** ##
+I made this project in my personal time with no financial benefit or sponsorship. I will continue to improve the project. I have done my best to ensure that everything is accurate and functional, there's always a chance that mistakes may occur. I cannot be held responsible for any loss of your time or money that may result from using this open source project. Thank you for your understanding.
 
-* Mai Pico: https://github.com/whowechina/mai_pico  
-<img src="https://raw.githubusercontent.com/whowechina/mai_pico/main/doc/main.jpg" width="250px">
+## About the License
+It's CC-NC. So DIY for yourself and for your friend, don't make money from it. And plagiarism that doesn’t even dare to mention the original author is not acceptable.
 
 ## HOW TO BUILD
 
