@@ -24,17 +24,10 @@ Thanks to:
 For builds v1.1 and earlier, you need to do a small modification and the main PCB to get brightness control with latest firmware.
 See the bottom of this document.
 
+## My Other Projects
 You can check out my other cool projects.
 
-<img src="https://github.com/whowechina/popn_pico/raw/main/doc/main.jpg" height="100px">
-<img src="https://github.com/whowechina/iidx_pico/raw/main/doc/main.jpg" height="100px">
-<img src="https://github.com/whowechina/iidx_teeny/raw/main/doc/main.jpg" height="100px">
-<img src="https://github.com/whowechina/chu_pico/raw/main/doc/main.jpg" height="100px">
-<img src="https://github.com/whowechina/mai_pico/raw/main/doc/main.jpg" height="100px">
-<img src="https://github.com/whowechina/diva_pico/raw/main/doc/main.jpg" height="100px">
-<img src="https://github.com/whowechina/aic_pico/raw/main/doc/main.gif" height="100px">
-<img src="https://github.com/whowechina/groove_pico/raw/main/doc/main.gif" height="100px">
-<img src="https://github.com/whowechina/geki_pico/raw/main/doc/main.jpg" height="100px">
+<img src="https://github.com/whowechina/popn_pico/raw/main/doc/main.jpg" height="100px"> <img src="https://github.com/whowechina/iidx_pico/raw/main/doc/main.jpg" height="100px"> <img src="https://github.com/whowechina/iidx_teeny/raw/main/doc/main.jpg" height="100px"> <img src="https://github.com/whowechina/chu_pico/raw/main/doc/main.jpg" height="100px"> <img src="https://github.com/whowechina/mai_pico/raw/main/doc/main.jpg" height="100px"> <img src="https://github.com/whowechina/diva_pico/raw/main/doc/main.jpg" height="100px"> <img src="https://github.com/whowechina/aic_pico/raw/main/doc/main.gif" height="100px"> <img src="https://github.com/whowechina/groove_pico/raw/main/doc/main.gif" height="100px"> <img src="https://github.com/whowechina/geki_pico/raw/main/doc/main.jpg" height="100px"> <img src="https://github.com/whowechina/musec_pico/raw/main/doc/main.jpg" height="100px">
 
 * Popn Pico: https://github.com/whowechina/popn_pico
 * IIDX Pico: https://github.com/whowechina/iidx_pico
@@ -45,15 +38,20 @@ You can check out my other cool projects.
 * AIC Pico: https://github.com/whowechina/aic_pico
 * Groove Pico: https://github.com/whowechina/groove_pico
 * Geki Pico: https://github.com/whowechina/geki_pico
+* Musec Pico: https://github.com/whowechina/musec_pico
 
 ## **Disclaimer** ##
 I made this project in my personal time with no financial benefit or sponsorship. I will continue to improve the project. I have done my best to ensure that everything is accurate and functional, there's always a chance that mistakes may occur. I cannot be held responsible for any loss of your time or money that may result from using this open source project. Thank you for your understanding.
 
 ## About the License
-It's CC-NC. So DIY for yourself and for your friend, don't make money from it. And plagiarism that doesn’t even dare to mention the original author is not acceptable.
+It's CC-NC. So DIY for yourself and for your friend, don't make money from it. And plagiarism that doesn’t even dare to mention the original author is not acceptable. Plase note that pooling orders and group buying for raw materials is acceptable. Selling off any leftover components without profit is also acceptable.
+
+If you're interested in some kind of commercial use, please contact me (Discord, QQ group, Wechat group or leave your contact in issue section).
+
+## My Discord Invitation
+https://discord.gg/M8f2PPQFEA
 
 ## HOW TO BUILD
-
 ### Step 1 - Buy
 * Place order at jlcpcb.com for PCB and plate. Gerber zip files are **/PRODUCTION/PCB.zip** and **/PRODUCTION/PLATE.zip**. Leave everything default in JLC's ordering page (board thickness is 1.6mm). Choose what ever color you like, I prefer white.  
   <img src="doc/pcb_and_plate.jpg" width="50%">
