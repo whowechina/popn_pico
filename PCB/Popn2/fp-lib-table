@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "popn_pico2")(type "KiCad")(uri "${KIPRJMOD}/pop_pico2.pretty")(options "")(descr ""))
+  (lib (name "Switch_Keyboard_Kailh")(type "KiCad")(uri "${KIPRJMOD}/Switch_Keyboard_Kailh.pretty")(options "")(descr ""))
+  (lib (name "Type-C")(type "KiCad")(uri "${KIPRJMOD}/Type-C.pretty")(options "")(descr ""))
+)

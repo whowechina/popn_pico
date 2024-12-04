@@ -1,0 +1,216 @@
+(footprint "PJ313"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Headphones with microphone connector, 3.5mm, 4 pins (http://www.qingpu-electronics.com/en/products/WQP-PJ320E-177.html)")
+	(tags "3.5mm jack mic microphone phones headphones 4pins audio plug")
+	(property "Reference" "REF**"
+		(at 0 4.5 0)
+		(layer "F.SilkS")
+		(uuid "befa0ea2-c08c-4f88-9352-568a17ba9db0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "PJ313"
+		(at 0 -3 0)
+		(layer "F.Fab")
+		(uuid "7ce2a5aa-79a9-42a0-b40e-0bee33ed6e39")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at -2.3 -1.3 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "32c9d698-683a-4ba7-a860-35963cc9c385")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at -2.3 -1.3 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c2392d6c-e2f6-4c7c-a207-2ba1d0058ae3")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at -2.3 -1.3 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "32c651c6-173d-4594-8d51-ff7c64cdb55e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -3 -5.25)
+		(end -3 -1.5)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "454cecea-2b43-4db0-91d9-28e3d0b3e7b9")
+	)
+	(fp_line
+		(start -3 3)
+		(end -3 1.5)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "5e0de93d-aed7-4301-9e23-2da163031da7")
+	)
+	(fp_line
+		(start -3 3)
+		(end 3 3)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "e3aa8d06-5b73-4e73-ad09-46cc4b161c1a")
+	)
+	(fp_line
+		(start -1.5 -8.5)
+		(end 1.5 -8.5)
+		(stroke
+			(width 0.4)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "28dc8662-4ef6-4bde-8a60-1460d7e0c848")
+	)
+	(fp_line
+		(start 3 -5.3)
+		(end 3 -4.9)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "2345f696-187a-411c-b198-01fe08b24f37")
+	)
+	(fp_line
+		(start 3 -2.1)
+		(end 3 -1.4)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "30669ff1-e312-4edb-ab0a-57b532ea8741")
+	)
+	(fp_line
+		(start 3 3)
+		(end 3 1.5)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "f90d1403-901c-498d-88cb-26bdefe8ed92")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -2 0)
+		(layer "F.Fab")
+		(uuid "99d04793-d4e2-49c2-9b75-5a30b4b2e698")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0 -6 270)
+		(size 1.8 1.8)
+		(drill 1.8)
+		(layers "*.Mask")
+		(uuid "11409603-7f48-4115-820e-e63062886281")
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0 270)
+		(size 1.8 1.8)
+		(drill 1.8)
+		(layers "*.Mask")
+		(uuid "5049a3a8-6bdb-42c6-bc6a-63714e3ef28c")
+	)
+	(pad "1" thru_hole oval
+		(at -3 -6.7 270)
+		(size 2.4 1.6)
+		(drill oval 1.4 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "23356f37-d0f4-44d2-8dcf-fe66d2c3ab61")
+	)
+	(pad "1" thru_hole oval
+		(at 3 -6.7 270)
+		(size 2.4 1.6)
+		(drill oval 1.4 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e8c740f3-7788-44f8-8918-437835a8f5ce")
+	)
+	(pad "2" thru_hole oval
+		(at 3 -3.5 270)
+		(size 2.4 1.6)
+		(drill oval 1.4 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8046213a-4988-4fc6-b12e-b5983b9f4782")
+	)
+	(pad "3" thru_hole oval
+		(at -3 0 270)
+		(size 2.4 1.6)
+		(drill oval 1.4 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "5b7e1925-6298-48b0-9e0e-4017d5ae78c1")
+	)
+	(pad "3" thru_hole oval
+		(at 3 0 270)
+		(size 2.4 1.6)
+		(drill oval 1.4 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "80cf162c-f077-44b9-801d-65bd60b71ee6")
+	)
+	(model "${KIPRJMOD}/3dmodels/TRS Jack PJ-313.stp"
+		(offset
+			(xyz 0 2.5 5.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 180)
+		)
+	)
+)

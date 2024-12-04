@@ -1,0 +1,15 @@
+(footprint "Solder_1P" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (descr "Mounting Hole 3.2mm, no annular, M3")
+  (tags "mounting hole 3.2mm no annular m3")
+  (attr exclude_from_pos_files exclude_from_bom)
+  (fp_text reference "REF**" (at 0 -4.2) (layer "F.SilkS") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 6282d667-79cd-44e7-80c8-be7016e34908)
+  )
+  (fp_text value "Solder_1P" (at 0 4.2) (layer "F.Fab") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 7fc00494-d222-4f8b-ab7e-6fd134aae9d9)
+  )
+  (pad "1" smd roundrect (at 0 0) (size 3 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp ff647f67-9140-43fa-8abe-8aaf180c1578))
+)

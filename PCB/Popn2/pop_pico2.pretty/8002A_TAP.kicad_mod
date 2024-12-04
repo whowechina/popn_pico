@@ -1,0 +1,129 @@
+(footprint "8002A_TAP"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "surface-mounted straight pin header, 1x06, 2.00mm pitch, single row, style 1 (pin 1 left)")
+	(tags "Surface mounted pin header SMD 1x06 2.00mm single row style1 pin1 left")
+	(property "Reference" "REF**"
+		(at 0 -7.06 0)
+		(layer "F.SilkS")
+		(uuid "f5b68196-b133-45bd-8c2b-3c1e6e1683b6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "8002A_TAP"
+		(at 0 7.06 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "73989231-ca26-4c2c-8d57-1e6a7a4fcbbe")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c7378132-94a3-4d8f-bfcd-fa8b3dd51830")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "72eaf868-966e-4bde-a707-7e456f009e5a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1ce22db6-d1e8-4f30-ab5c-b1b229fd6530")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_rect
+		(start -3 -6)
+		(end 3 6)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "f0b23eaa-7766-4622-b4a6-b925a2da93cf")
+	)
+	(pad "1" smd rect
+		(at 0 -5)
+		(size 5 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "07ba3cfd-1af6-4a68-9d6e-5605fb91b8ae")
+	)
+	(pad "2" smd rect
+		(at 0 -3)
+		(size 5 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "a0f1da47-6585-4eb7-af6e-5c6e1e764444")
+	)
+	(pad "3" smd rect
+		(at 0 -1)
+		(size 5 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "0f7e56b2-5093-4070-a976-a627127f73e0")
+	)
+	(pad "4" smd rect
+		(at 0 1)
+		(size 5 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "c0b07c7e-2e5e-4ac4-a132-3ff2bc6b6972")
+	)
+	(pad "5" smd rect
+		(at 0 3)
+		(size 5 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "7165b8a3-9320-49ca-b44e-5576b9a94db4")
+	)
+	(pad "6" smd rect
+		(at 0 5)
+		(size 5 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "28b14617-fd5e-420d-90a6-b890f700cf21")
+	)
+	(model "D:/Code/geki_pico/PCB/Lib/3dmodels/8002A.step"
+		(offset
+			(xyz 8 0 -3)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 90)
+		)
+	)
+)
