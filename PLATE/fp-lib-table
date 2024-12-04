@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "skin")(type "KiCad")(uri "${KIPRJMOD}/skin.pretty")(options "")(descr ""))
-)

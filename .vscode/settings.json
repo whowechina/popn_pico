@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "ws2812.pio.h": "c",
+        "gpio.h": "c",
+        "buttons.h": "c",
+        "stdbool.h": "c",
+        "debounce.h": "c",
+        "clocks.h": "c",
+        "rgb.h": "c",
+        "pio.h": "c"
+    }
+}
