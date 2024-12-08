@@ -1,10 +1,10 @@
 /*
- * Pico Popn Controller Buttons
+ * Controller Buttons
  * WHowe <github.com/whowechina>
  */
 
-#ifndef BUTTONS_H
-#define BUTTONS_H
+#ifndef BUTTON_H
+#define BUTTON_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -12,11 +12,7 @@
 
 void button_init();
 uint8_t button_num();
-uint8_t button_gpio(uint8_t id);
-
-uint16_t button_read();
-
 void button_update();
-void button_set_light(uint8_t const *lights, uint8_t num);
+uint16_t button_read();
 
 #endif

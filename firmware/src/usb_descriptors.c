@@ -27,18 +27,6 @@
 
 #include "tusb.h"
 
-/* A combination of interfaces must have a unique product id, since PC will save
- * device driver after the first plug. Same VID/PID with different interface e.g
- * MSC (first), then CDC (later) will possibly cause system error on PC.
- *
- * Auto ProductID layout's Bitmap:
- *   [MSB]         HID | MSC | CDC          [LSB]
- */
-#define _PID_MAP(itf, n) ((CFG_TUD_##itf) << (n))
-#define USB_PID                                                      \
-  (0x4000 | _PID_MAP(CDC, 0) | _PID_MAP(MSC, 1) | _PID_MAP(HID, 2) | \
-   _PID_MAP(MIDI, 3) | _PID_MAP(VENDOR, 4))
-
 //--------------------------------------------------------------------+
 // Device Descriptors
 //--------------------------------------------------------------------+
@@ -51,15 +39,16 @@ tusb_desc_device_t const desc_device_joy = {
     .bDeviceProtocol = 0x00,
     .bMaxPacketSize0 = CFG_TUD_ENDPOINT0_SIZE,
 
-    .idVendor = 0xCafe,
-    .idProduct = USB_PID,
+    .idVendor = 0xcafe,
+    .idProduct = 0x0013,
     .bcdDevice = 0x0100,
 
-    .iManufacturer = 0x01,
-    .iProduct = 0x02,
-    .iSerialNumber = 0x03,
+    .iManufacturer = 1,
+    .iProduct = 2,
+    .iSerialNumber = 3,
 
-    .bNumConfigurations = 0x01};
+    .bNumConfigurations = 1
+};
 
 // Invoked when received GET DEVICE DESCRIPTOR
 // Application return pointer to descriptor
@@ -72,30 +61,36 @@ uint8_t const* tud_descriptor_device_cb(void) {
 //--------------------------------------------------------------------+
 
 uint8_t const desc_hid_report_joy[] = {
-    GAMECON_REPORT_DESC_JOYSTICK(HID_REPORT_ID(REPORT_ID_JOYSTICK)),
-    GAMECON_REPORT_DESC_LIGHTS(HID_REPORT_ID(REPORT_ID_LIGHTS))
+    GAMECON_REPORT_DESC_JOYSTICK,
+    GAMECON_REPORT_DESC_LIGHTS
 };
 
 // Invoked when received GET HID REPORT DESCRIPTOR
 // Application return pointer to descriptor
 // Descriptor contents must exist long enough for transfer to complete
 uint8_t const* tud_hid_descriptor_report_cb(uint8_t itf) {
-  (void)itf;
-  return desc_hid_report_joy;
+    switch (itf) {
+        case 0:
+            return desc_hid_report_joy;
+        default:
+            return NULL;
+    }
 }
 
 //--------------------------------------------------------------------+
 // Configuration Descriptor
 //--------------------------------------------------------------------+
 
-enum { ITF_NUM_HID, ITF_NUM_CDC, ITF_NUM_CDC_DATA, ITF_NUM_TOTAL };
+enum { ITF_NUM_JOY, ITF_NUM_CLI, ITF_NUM_CLI_DATA, ITF_NUM_TOTAL };
 
-#define CONFIG_TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_HID_DESC_LEN + TUD_CDC_DESC_LEN)
+#define CONFIG_TOTAL_LEN (TUD_CONFIG_DESC_LEN + \
+                          TUD_HID_DESC_LEN * 1 + \
+                          TUD_CDC_DESC_LEN * 1)
 
-#define EPNUM_HID 0x84
-#define EPNUM_CDC_NOTIF 0x81
-#define EPNUM_CDC_OUT   0x02
-#define EPNUM_CDC_IN    0x82
+#define EPNUM_JOY 0x84
+#define EPNUM_CLI_NOTIF 0x81
+#define EPNUM_CLI_OUT   0x02
+#define EPNUM_CLI_IN    0x82
 
 uint8_t const desc_configuration_joy[] = {
     // Config number, interface count, string index, total length, attribute,
@@ -105,12 +100,12 @@ uint8_t const desc_configuration_joy[] = {
 
     // Interface number, string index, protocol, report descriptor len, EP In
     // address, size & polling interval
-    TUD_HID_DESCRIPTOR(ITF_NUM_HID, 0, HID_ITF_PROTOCOL_NONE,
-                       sizeof(desc_hid_report_joy), EPNUM_HID,
+    TUD_HID_DESCRIPTOR(ITF_NUM_JOY, 2, HID_ITF_PROTOCOL_NONE,
+                       sizeof(desc_hid_report_joy), EPNUM_JOY,
                        CFG_TUD_HID_EP_BUFSIZE, 1),
     
-    TUD_CDC_DESCRIPTOR(ITF_NUM_CDC, 4, EPNUM_CDC_NOTIF,
-                       8, EPNUM_CDC_OUT, EPNUM_CDC_IN, 64)
+    TUD_CDC_DESCRIPTOR(ITF_NUM_CLI, 5, EPNUM_CLI_NOTIF,
+                       8, EPNUM_CLI_OUT, EPNUM_CLI_IN, 64)
 
     };
 
@@ -130,8 +125,9 @@ uint8_t const* tud_descriptor_configuration_cb(uint8_t index) {
 char const* string_desc_arr[] = {
     (const char[]){0x09, 0x04},  // 0: is supported language is English (0x0409)
     "WHowe",                     // 1: Manufacturer
-    "Pico Popn Controller",      // 2: Product
+    "Popn Pico",      // 2: Product
     "123456",                    // 3: Serials, should use chip ID
+    "Popn Pico CLI"
     "Button 1",
     "Button 2",
     "Button 3",
@@ -141,13 +137,9 @@ char const* string_desc_arr[] = {
     "Button 7",
     "Button 8",
     "Button 9",
-    "Aux 1",
-    "Aux 2",
-    "Ext 1",
-    "Ext 2",
-    "Logo Red",
-    "Logo Green",
-    "Logo Blue"
+    "Cab Red",
+    "Cab Green",
+    "Cab Blue"
 };
 
 static uint16_t _desc_str[64];
