@@ -28,13 +28,12 @@ void light_set_cab_all(uint32_t color, bool hid);
 #define RGB(r, g, b) ((r << 16) | (g << 8) | b)
 #endif
 
-#define RED RGB(255, 0, 0)
-#define GREEN RGB(0, 255, 0)
-#define BLUE RGB(0, 0, 255)
-#define YELLOW RGB(255, 255, 0)
-#define CYAN RGB(0, 255, 255)
-#define MAGENTA RGB(255, 0, 255)
-#define WHITE RGB(255, 255, 255)
-#define BLACK RGB(0, 0, 0)
+#define HUE_RED 0
+#define HUE_GREEN 85
+#define HUE_BLUE 170
+#define HUE_YELLOW 42
+#define HUE_CYAN 127
+#define HUE_MAGENTA 212
+
 
 #endif

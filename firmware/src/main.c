@@ -32,19 +32,61 @@
 #include "light.h"
 #include "button.h"
 
+
+typedef struct {
+    uint8_t h;
+    uint8_t s;
+    uint8_t v;
+} hsv_t;
+
+static struct {
+    hsv_t on[9];
+    hsv_t off[9];
+} main_theme = {
+    .on = {
+        { 0, 0, 255 },
+        { HUE_YELLOW, 240, 255 },
+        { HUE_GREEN, 240, 255 },
+        { HUE_BLUE, 240, 255 },
+        { HUE_RED, 240, 255 },
+        { HUE_BLUE, 240, 255 },
+        { HUE_GREEN, 240, 255 },
+        { HUE_YELLOW, 240, 255 },
+        { 0, 0, 255 },
+    },
+    .off = {
+        { 0, 0, 128 },
+        { HUE_YELLOW, 255, 80 },
+        { HUE_GREEN, 255, 80 },
+        { HUE_BLUE, 255, 80 },
+        { HUE_RED, 255, 80 },
+        { HUE_BLUE, 255, 80 },
+        { HUE_GREEN, 255, 80 },
+        { HUE_YELLOW, 255, 80 },
+        { 0, 0, 128 },
+    }
+};
+
+static uint32_t hsv2rgb(hsv_t hsv)
+{
+    return rgb32_from_hsv(hsv.h, hsv.s, hsv.v);
+}
+
 static void light_render()
 {
     uint32_t phase = time_us_32() >> 16;
 
     for (int i = 0; i < 9; i ++) {
-        uint32_t color = rgb32_from_hsv(phase + i * 27, 255, 128);
+//        uint32_t color = rgb32_from_hsv(phase + i * 27, 255, 128);
+        uint32_t color = hsv2rgb(main_theme.off[i]);
         light_set_button(i, color, false);
     }
 
     uint16_t button = button_read();
     for (int i = 0; i < 9; i++) {
         if (button & (1 << i)) {
-            light_set_button(i, WHITE, false);
+//            light_set_button(i, WHITE, false);
+            light_set_button(i, hsv2rgb(main_theme.on[i]), false);
         }
     }
 

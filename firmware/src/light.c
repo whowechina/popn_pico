@@ -47,6 +47,12 @@ uint32_t rgb32(uint32_t r, uint32_t g, uint32_t b, bool gamma_fix)
 #endif
 }
 
+#if RGB_ORDER == GRB
+#define MIX_RGB(r, g, b) ((r << 8) | (g << 16) | b)
+#else
+#define MIX_RGB(r, g, b) ((r << 16) | (g << 8) | b)
+#endif
+
 uint32_t rgb32_from_hsv(uint8_t h, uint8_t s, uint8_t v)
 {
     uint32_t region, remainder, p, q, t;
@@ -64,17 +70,17 @@ uint32_t rgb32_from_hsv(uint8_t h, uint8_t s, uint8_t v)
 
     switch (region) {
         case 0:
-            return v << 16 | t << 8 | p;
+            return MIX_RGB(v, t, p);
         case 1:
-            return q << 16 | v << 8 | p;
+            return MIX_RGB(q, v, p);
         case 2:
-            return p << 16 | v << 8 | t;
+            return MIX_RGB(p, v, t);
         case 3:
-            return p << 16 | q << 8 | v;
+            return MIX_RGB(p, q, v);
         case 4:
-            return t << 16 | p << 8 | v;
+            return MIX_RGB(t, p, v);
         default:
-            return v << 16 | p << 8 | q;
+            return MIX_RGB(v, p, q);
     }
 }
 
