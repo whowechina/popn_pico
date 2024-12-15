@@ -104,7 +104,7 @@ uint8_t const desc_configuration_joy[] = {
                        sizeof(desc_hid_report_joy), EPNUM_JOY,
                        CFG_TUD_HID_EP_BUFSIZE, 1),
     
-    TUD_CDC_DESCRIPTOR(ITF_NUM_CLI, 5, EPNUM_CLI_NOTIF,
+    TUD_CDC_DESCRIPTOR(ITF_NUM_CLI, 4, EPNUM_CLI_NOTIF,
                        8, EPNUM_CLI_OUT, EPNUM_CLI_IN, 64)
 
     };
@@ -127,7 +127,7 @@ char const* string_desc_arr[] = {
     "WHowe",                     // 1: Manufacturer
     "Popn Pico",      // 2: Product
     "123456",                    // 3: Serials, should use chip ID
-    "Popn Pico CLI"
+    "Popn Pico CLI",
     "Button 1",
     "Button 2",
     "Button 3",

@@ -34,6 +34,9 @@ void light_set_cab_all(uint32_t color, bool hid);
 #define HUE_YELLOW 42
 #define HUE_CYAN 127
 #define HUE_MAGENTA 212
-
+#define HUE_ORANGE 21
+#define HUE_PINK 234
+#define HUE_PURPLE 191
+#define HUE_LIME 64
 
 #endif

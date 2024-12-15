@@ -192,22 +192,6 @@ static void update_check()
     }
 }
 
-static void  theme_check()
-{
-    uint16_t button = button_read();
-    if (button & 0x01) {
-        popn_cfg->theme = 0;
-    } else if (button & 0x04) {
-        popn_cfg->theme = 1;
-    } else if (popn_cfg->theme > 1) {
-        popn_cfg->theme = 0;
-    } else {
-        return;
-    }
-
-    config_changed();
-}
-
 void init()
 {
     sleep_ms(50);
@@ -230,7 +214,6 @@ void init()
     cli_init("popn_pico>", "\n   << Popn Pico 2 Controller >>\n"
                             " https://github.com/whowechina\n\n");
     
-    theme_check();
     commands_init();
 }
 
@@ -260,5 +243,17 @@ void tud_hid_set_report_cb(uint8_t itf, uint8_t report_id,
                            uint16_t bufsize)
 {
     if (report_id == REPORT_ID_LIGHTS) {
+        if (bufsize < 12) {
+            return;
+        }
+        for (int i = 0; i < 9; i++) {
+            if (buffer[i]) {
+                light_set_button(i, hsv2rgb(main_theme.on[i]), true);
+            } else {
+                light_set_button(i, hsv2rgb(main_theme.off[i]), true);
+            }
+        }
+        uint32_t color = rgb32(buffer[9], buffer[10], buffer[11], false);
+        light_set_cab_all(color, true);
     }
 }
