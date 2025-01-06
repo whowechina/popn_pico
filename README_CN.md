@@ -1,4 +1,4 @@
-# Popn Pico - 拍打乐风格的迷你控制器
+# Popn Pico - Pop'n Music 风格的迷你控制器
 [Click here for the English version of this guide.](README.md)
 
 <img src="doc/main.jpg" width="70%">
@@ -55,10 +55,10 @@ https://discord.gg/M8f2PPQFEA
 * 1x Rasberry Pico Pi Pico 或者兼容的克隆板。  
   https://www.raspberrypi.com/products/raspberry-pi-pico
 * 3x USB Type-C 插座 (918-418K2023S40001 或 KH-TYPE-C-16P)。
-* 27x WS2812B-3528 RGB LED.
-* 9x WS2812B-4020 RGB LEDs (侧面发光).
-* 6x 0603 0.1uF 电容 (0.1~1uF all 都可以).
-* 2x 0603 5.1kohm 电阻.
+* 27x WS2812B-3528 RGB LED。
+* 9x WS2812B-4020 RGB LEDs (侧面发光)。
+* 6x 0603 0.1uF 电容 (0.1~1uF all 都可以)。
+* 2x 0603 5.1kohm 电阻。
 * 9x 凯华 Choc v2 轴，线性，35-50gf 力度最佳，我自己用凯华的白雨轴。
 * 2x ALPS SKHHLWA010 6\*6\*7mm 或者兼容的轻触开关。  
   https://tech.alpsalpine.com/e/products/detail/SKHHLWA010/

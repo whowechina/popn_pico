@@ -103,7 +103,7 @@ I made this project in my personal time without any sponsorship. I will continue
 * Clear soft/flexible glue or UV curing glue. WARNING: Avoid using any cyanoacrylate-based glue, such as 502. Any glue with a similar smell should also be avoided, as they will leave white smoke marks on the acrylic.
 
 #### Steps
-1. We'll make 9 dome button caps first. Just glue the shorter half of the clear plastic ball onto the button seat use the glue mentioned earlier.
+1. We'll make 9 dome button caps first. Just glue the shorter half of the clear plastic ball onto the button seat use the glue mentioned earlier.  
    <img src="doc/dome_button.jpg" width="70%">
 2. Install 9 dome button caps onto the switches.
 5. Put the PCB into the base part, and then put on the middle frame, and lastly put on the panel. Tighten them using M3 screws. Put anti-slip pads on the bottom, right on top of the screws.
