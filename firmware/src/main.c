@@ -124,25 +124,27 @@ static void core1_loop()
 
 struct __attribute__((packed)) {
     uint16_t buttons;
-} hid_report = {0};
+} hid_joy, hid_joy_sent = {0};
 
 static void hid_update()
 {
-    static uint64_t last_report = 0;
-    uint64_t now = time_us_64();
-    if (now - last_report < 1000) {
+    static uint64_t last_report_time = 0;
+
+    if (!tud_hid_ready()) {
         return;
     }
-    last_report = now;
 
-    hid_report.buttons = button_read();
-
-    if (tud_hid_ready()) {
-        tud_hid_n_report(0, REPORT_ID_JOYSTICK, &hid_report, sizeof(hid_report));
+    uint64_t now = time_us_64();
+    hid_joy.buttons = button_read();
+    if ((memcmp(&hid_joy, &hid_joy_sent, sizeof(hid_joy)) == 0) &&
+        (now - last_report_time < 10000)) {
+        return;
+    }
+    last_report_time = now;
+    if (tud_hid_report(REPORT_ID_JOYSTICK, &hid_joy, sizeof(hid_joy))) {
+        hid_joy_sent = hid_joy;
     }
 }
-
-#define LOOP_HZ 4000
 
 static void core0_loop()
 {
