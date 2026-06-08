@@ -76,7 +76,7 @@ I made this project in my personal time without any sponsorship. I will continue
 * You can test the PCB now, put the firmware in.
 * LEDs should light up and respond to the button presses.
 * Popn Pico should be recognized as a USB HID device, here's the test page.  
-  https://greggman.github.io/html5-gamepad-test/
+  https://whowechina.github.io/iidx_pico/Tools/gamepad_test.html
 
 ### 3D Printing
 #### Printing parameters  
@@ -118,10 +118,18 @@ I made this project in my personal time without any sponsorship. I will continue
 * For the new build, hold the BOOTSEL button while connect the USB to a PC, there will be a disk named "RPI-RP2" showed up. Drag the UF2 firmware binary file into it. That's it. There's a small hole at the bottom side of the Popn Pico 2, it is facing right to the BOOTSEL button.
 * If it's already running Popn Pico 2 firmware, you can either use "update" in command line or hold down more than 4 buttons while connecting to USB to enter update mode.
 * To access the command line, you can use this Web Serial Terminal to connect to the command line port of the controller. (Note: "?" is for help)  
-  https://googlechromelabs.github.io/serial-terminal/
+  https://whowechina.github.io/iidx_pico/Tools/cli_tool.html
 
 ### Usage
 * It's very simple. Just plug and play.
+
+### Bonus - Popn Visa Card Holder
+ <img src="doc/popn_visa.jpg" width="40%">  
+
+* Popn Visa card holder is a bonus design for Popn Pico. It can be used to hold your credit card sized arcade cards.
+* Print the base and the panel, assign different color for the pattern and text on the panel. `_insert` means it's the heat-set insert version. `_flat` means it's for flat head (countersunk) screws. Transparent material is recommended.
+* If you choose the `_insert` version, use 4x M1.2\*1.5mm\*2mm (thread size\*length\*diameter) heat-set inserts on base part.
+* 4x M1.2\*3mm screws to fix the panel and the base together. If you choose the `_flat` version, use M1.2\*3mm flat head screws.
 
 ## CAD Source File
 I'm using OnShape free subscription. It's powerful but it can't archive original designs to local, so I can only share the link here. STL/DXF/DWG files are exported from this online document.  

@@ -75,7 +75,7 @@ https://discord.gg/M8f2PPQFEA
 * 现在你可以测试 PCB 了，把固件烧录进去。
 * LED 都应该亮起并且按钮按下后有响应。
 * Popn Pico 2 应该被识别为 USB HID 设备，这里是测试页面。  
-  https://greggman.github.io/html5-gamepad-test/
+  https://whowechina.github.io/iidx_pico/Tools/gamepad_test.html
 
 
 ### 3D 打印
@@ -118,10 +118,18 @@ https://discord.gg/M8f2PPQFEA
 * 对于首次烧录，按住 BOOTSEL 按钮连接到 USB，会出现一个名为 "RPI-RP2" 的磁盘。将 UF2 固件二进制文件拖入其中。Popn Pico 2 的底部有一个小孔，它正对着 BOOTSEL 按钮。
 * 如果已经烧录过 Popn Pico 2 固件，你可以使用命令行中的 "update" 或者在插入 USB 的时候按住至少 4 个按钮来进入更新模式。
 * 要访问命令行，你可以使用这个 Web 串口终端连接到 Popn Pico 2 的命令行串口。（注意："?" 是帮助）  
-  https://googlechromelabs.github.io/serial-terminal/
+  https://whowechina.github.io/iidx_pico/Tools/cli_tool.html
 
 ### 使用
 * 非常简单。只要插上就可以玩了。
+
+### 福利 - Popn Visa 卡套
+<img src="doc/popn_visa.jpg" width="40%">  
+
+* Popn Visa 卡片夹是 Popn Pico 的一个额外设计。它可以用来放置你的信用卡大小的街机卡。
+* 打印底座和面板，给面板上的图案和文字部分分配不同的颜色。`_insert` 版本的意思是需要使用热熔螺母。`_flat` 版本的意思是使用沉头螺丝。建议使用透明材料。
+* 如果你选择了 `_insert` 的版本，底座部分需要 4 个 M1.2\*1.5mm\*2mm（螺纹尺寸\*长度\*直径）的热熔螺母。
+* 4 个 M1.2\*3mm 的螺丝用来把面板和底座固定在一起。如果你选择了 `_flat` 版本，请使用 M1.2\*3mm 的沉头螺丝。
 
 ## CAD Source File
 我使用的是 OnShape 的免费订阅。它很强大，但不能将原始设计存档到本地，所以我只能在这里分享链接。STL/DXF/DWG 文件是从这个在线文档导出的。
