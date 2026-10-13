@@ -92,7 +92,6 @@ static void drive_led()
 
     for (int i = 0; i < count_of(buf_cab); i++) {
         pio_sm_put_blocking(pio0, 1, buf_cab[i] << 8u);
-        pio_sm_put_blocking(pio0, 1, buf_cab[i] << 8u);
     }
 }
 
@@ -105,7 +104,7 @@ static inline uint32_t apply_level(uint32_t color)
     r = r * popn_cfg->light.level / 255;
     g = g * popn_cfg->light.level / 255;
     b = b * popn_cfg->light.level / 255;
-
+ 
     return r << 16 | g << 8 | b;
 }
 
@@ -165,25 +164,30 @@ void light_set_button(uint8_t index, uint32_t color, bool hid)
     }
 }
 
-void light_set_cab(uint8_t index, uint32_t color, bool hid)
-{
-    if (bypass_check(hid)) {
-        return;
-    }
-    if (index >= count_of(buf_cab)) {
-        return;
-    }
-
-    buf_cab[index] = apply_level(color);
-}
-
-void light_set_cab_all(uint32_t color, bool hid)
+void light_set_cab(uint32_t color, bool hid)
 {
     if (bypass_check(hid)) {
         return;
     }
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < count_of(buf_cab); i++) {
+        if ((i == 4) || (i == 8)) { // Skip side LEDs
+            continue;
+        }
         buf_cab[i] = apply_level(color);
     }
+}
+
+void light_set_side(uint8_t id, uint32_t color, bool hid)
+{
+    if (bypass_check(hid)) {
+        return;
+    }
+
+    if (id > 1) {
+        return;
+    }
+
+    uint8_t index = (id == 0) ? 8 : 4;
+    buf_cab[index] = apply_level(color);
 }

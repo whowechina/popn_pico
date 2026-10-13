@@ -19,8 +19,8 @@ uint32_t rgb32(uint32_t r, uint32_t g, uint32_t b, bool gamma_fix);
 uint32_t rgb32_from_hsv(uint8_t h, uint8_t s, uint8_t v);
 
 void light_set_button(uint8_t index, uint32_t color, bool hid);
-void light_set_cab(uint8_t index, uint32_t color, bool hid);
-void light_set_cab_all(uint32_t color, bool hid);
+void light_set_cab(uint32_t color, bool hid);
+void light_set_side(uint8_t id, uint32_t color, bool hid);
 
 #if RGB_ORDER == GRB
 #define RGB(r, g, b) ((g << 16) | (r << 8) | b)

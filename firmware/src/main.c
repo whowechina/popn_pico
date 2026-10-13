@@ -90,10 +90,10 @@ static void light_render()
         }
     }
 
-    for (int i = 0; i < 9; i++) {
-        uint32_t color = rgb32_from_hsv(phase + i * 25, 255, 160);
-        light_set_cab(i, color, false);
-    }
+    uint32_t color = rgb32_from_hsv(phase, 255, 160);
+    light_set_cab(color, false);
+    light_set_side(0, rgb32_from_hsv(phase + 85, 255, 160), false);
+    light_set_side(1, rgb32_from_hsv(phase + 170, 255, 160), false);
 }
 
 static void run_lights()
@@ -224,6 +224,39 @@ int main(void)
     return 0;
 }
 
+static bool _is_pika = false;
+static uint64_t pika_expiry = 0;
+
+static void track_pika(uint8_t const *buffer, uint16_t bufsize)
+{
+    uint64_t now = time_us_64();
+
+    if (!buffer) {
+        _is_pika = (now < pika_expiry);
+        return;
+    }
+
+    if (!_is_pika && (bufsize >= 42)) {
+        for (int i = 9; i < 42; i++) { // RGBs for 9 buttons and 2 pop-kuns
+            if (buffer[i]) {
+                _is_pika = true;
+                break;
+            }
+        }
+    }
+
+    if (_is_pika) {
+        pika_expiry = now + 1000000;
+        return;
+    }
+}
+
+bool is_pika(void)
+{
+    track_pika(NULL, 0);
+    return _is_pika;
+}
+
 // Invoked when received GET_REPORT control request
 // Application must fill buffer report's content and return its length.
 // Return zero will cause the stack to STALL request
@@ -235,6 +268,44 @@ uint16_t tud_hid_get_report_cb(uint8_t itf, uint8_t report_id,
     return 0;
 }
 
+#define BUF_RGB32(buf) rgb32((buf)[0], (buf)[1], (buf)[2], false)
+
+static void set_light_pika(uint8_t const *buffer, uint16_t bufsize)
+{
+    if (bufsize >= 42) {
+        for (int i = 0; i < 9; i++) {
+            uint32_t color = BUF_RGB32(&buffer[9 + i * 3]);
+            light_set_button(i, color, true);
+        }
+        uint32_t left = BUF_RGB32(&buffer[36]);
+        uint32_t right = BUF_RGB32(&buffer[39]);
+        light_set_side(0, left, true);
+        light_set_side(1, right, true);
+    }
+    if (bufsize >= 45) {
+        uint32_t cab_color = BUF_RGB32(&buffer[42]);
+        light_set_cab(cab_color, true);
+    }
+}
+
+static void set_light_legacy(uint8_t const *buffer, uint16_t bufsize)
+{
+    for (int i = 0; i < 9; i++) {
+        if (buffer[i]) {
+            light_set_button(i, hsv2rgb(main_theme.on[i]), true);
+        } else {
+            light_set_button(i, hsv2rgb(main_theme.off[i]), true);
+        }
+    }
+    if (bufsize >= 45) {
+        uint32_t color = BUF_RGB32(&buffer[42]);
+        light_set_cab(color, true);
+    } else if (bufsize >= 12) {
+        uint32_t color = BUF_RGB32(&buffer[9]);
+        light_set_cab(color, true);
+    }
+}
+
 // Invoked when received SET_REPORT control request or
 // received data on OUT endpoint ( Report ID = 0, Type = 0 )
 void tud_hid_set_report_cb(uint8_t itf, uint8_t report_id,
@@ -242,17 +313,16 @@ void tud_hid_set_report_cb(uint8_t itf, uint8_t report_id,
                            uint16_t bufsize)
 {
     if (report_id == REPORT_ID_LIGHTS) {
+        track_pika(buffer, bufsize);
+
         if (bufsize < 12) {
             return;
         }
-        for (int i = 0; i < 9; i++) {
-            if (buffer[i]) {
-                light_set_button(i, hsv2rgb(main_theme.on[i]), true);
-            } else {
-                light_set_button(i, hsv2rgb(main_theme.off[i]), true);
-            }
+
+        if (is_pika()) {
+            set_light_pika(buffer, bufsize);
+        } else {
+            set_light_legacy(buffer, bufsize);
         }
-        uint32_t color = rgb32(buffer[9], buffer[10], buffer[11], false);
-        light_set_cab_all(color, true);
     }
 }
